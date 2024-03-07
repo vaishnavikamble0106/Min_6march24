@@ -1,0 +1,117 @@
+<html>
+<head>
+	<title> Min Finder </title>
+	<style>
+		* {font-size:50px; font-family:Calibri;}
+		body {background-color: lightyellow;}
+		input[type="submit"] {background-color:red; color:white; border-radius:20px;}
+	</style>	
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num1 = document.getElementById("num1");
+			let num2 = document.getElementById("num2");
+			let msg = document.getElementById("msg");
+			let action = document.activeElement.value;
+
+			if(num1.value == "")
+			{
+				alert("first number is empty");
+				msg.innerHTML = "";
+				num1.focus();
+				return;
+			}
+			
+			if(num2.value == "")
+			{
+				alert("second number is empty");
+				msg.innerHTML = "";
+				num2.focus();
+				return;
+			}
+			
+			let n1 = parseFloat(num1.value);
+			let n2 = parseFloat(num2.value);
+			if (action == "Method1")
+			{
+			
+				let res = n1 < n2 ? n1 : n2;			
+				msg.innerHTML = "min 1 = " + res;
+			}
+			else if (action == "Method2")
+			{
+				if (n1 < n2)
+					msg.innerHTML  = "min2 = " + n1;
+				else 
+					msg.innerHTML  = "min2 = " + n2;
+			}
+
+			else if (action == "Method3")
+			{
+				msg.innerHTML = "min3 = " + Math.min(n1,n2);
+			}
+		
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1> Min Finder App </h1>
+	<form onsubmit = "find()">
+		<input type = "number" placeholder="enter first number" id="num1"/>
+		<br><br>
+		<input type = "number" placeholder="enter second number" id="num2"/>
+		<br><br>
+		<input type = "submit" value="Method1"/>
+		<input type = "submit" value="Method2"/>
+		<input type = "submit" value="Method3"/>
+	</form>
+	<h2 id= "msg"/>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
